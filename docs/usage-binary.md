@@ -80,7 +80,7 @@ Usage of tusd:
   -expose-metrics
     	Expose metrics about tusd usage (default true)
   -gcs-bucket string
-    	Use Google Cloud Storage with this bucket as storage backend (requires the GCS_SERVICE_ACCOUNT_FILE environment variable to be set)
+    	Use Google Cloud Storage with this bucket as storage backend
   -gcs-object-prefix string
     	Prefix for GCS object names (can't contain underscore character)
   -hooks-dir string

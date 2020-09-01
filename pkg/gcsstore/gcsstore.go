@@ -3,11 +3,10 @@
 // GCSStore is a storage backend that uses the GCSAPI interface in order to store uploads
 // on GCS. Uploads will be represented by two files in GCS; the data file will be stored
 // as an extensionless object [uid] and the JSON info file will stored as [uid].info.
-// In order to store uploads on GCS, make sure to specify the appropriate Google service
-// account file path in the GCS_SERVICE_ACCOUNT_FILE environment variable. Also make sure that
-// this service account file has the "https://www.googleapis.com/auth/devstorage.read_write"
+// In order to store uploads on GCS make sure that
+// this service account has the "https://www.googleapis.com/auth/devstorage.read_write"
 // scope enabled so you can read and write data to the storage buckets associated with the
-// service account file.
+// service account.
 package gcsstore
 
 import (

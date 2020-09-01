@@ -80,7 +80,14 @@ type GCSService struct {
 // NewGCSService returns a GCSService object given a GCloud service account file path.
 func NewGCSService(filename string) (*GCSService, error) {
 	ctx := context.Background()
-	client, err := storage.NewClient(ctx, option.WithCredentialsFile(filename))
+
+	var client *storage.Client
+	var err error
+	if filename == "" {
+		client, err = storage.NewClient(ctx)
+	} else {
+		client, err = storage.NewClient(ctx, option.WithCredentialsFile(filename))
+	}
 	if err != nil {
 		return nil, err
 	}
